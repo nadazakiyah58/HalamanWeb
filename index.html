@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran UNINDRA - Fungsional Kuning</title>
+    <style>
+        /* Ketentuan Background Kuning */
+        body {
+            background-color: yellow;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Kontainer Utama untuk Judul dan Logo */
+        .header-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Gaya Logo di Kiri Atas */
+        .logo-left {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100px; 
+            width: auto;
+        }
+
+        /* Kontainer Teks Judul */
+        .title-block {
+            text-align: center;
+            flex-grow: 1;
+            margin-right: 100px;
+        }
+        
+        /* Ketentuan Judul Utama */
+        .judul-utama {
+            color: blue;
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Ketentuan Alamat (Animasi Marquee) */
+        .alamat-marquee {
+            font-size: 18pt;
+            color: red;
+            width: 100%;
+            padding: 5px 0;
+            text-align: center;
+        }
+        
+        /* Gaya Garis Pemisah */
+        .pemisah {
+            background-color: #000080; 
+            height: 5px; 
+            border: none;
+            margin: 15px 0;
+            clear: both;
+        }
+
+        /* Gaya untuk Tabel Nama/NPM (Kotak di Dalam Kotak dengan Space) */
+        .data-table {
+            width: 400px; 
+            margin: 20px auto; 
+            border-collapse: separate;
+            border-spacing: 5px; 
+            border: 2px solid #000;
+            font-size: 12pt;
+        }
+
+        .data-table td {
+            border: 1px solid #000;
+            padding: 5px;
+            /* Penting: Pastikan sel di tabel juga kuning */
+            background-color: yellow; 
+        }
+
+        .data-table tr td:nth-child(2) { 
+            width: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .data-table tr td:nth-child(3) { 
+            width: 60%;
+            padding: 0; 
+        }
+
+        /* Gaya Khusus Input Field */
+        .input-field {
+            width: 98%; 
+            padding: 5px;
+            border: none; 
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            box-sizing: border-box;
+            
+            /* PENTING: Mengatur latar belakang input menjadi kuning */
+            background-color: yellow; 
+        }
+        
+        /* Gaya untuk Konten (FTIK dan MIPA) */
+        .content-area {
+            width: 70%;
+            margin: 0 auto;
+            text-align: left;
+            padding: 10px 0;
+        }
+        
+        .content-area h3 {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-size: 14pt;
+        }
+        
+        /* Gaya List/Ordered List */
+        .ftik-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+        
+        .ftik-list li {
+            list-style-position: inside;
+            text-indent: -1.5em;
+            padding-left: 1.5em;
+        }
+        
+        .mipa-list {
+            padding-left: 20px;
+        }
+        
+        .mipa-list li {
+            list-style-type: upper-roman; 
+        }
+
+        /* Gaya Tombol Simpan */
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .simpan-button {
+            padding: 5px 20px;
+            border: 1px solid #000;
+            background-color: #e0e0e0; 
+            font-weight: bold;
+            font-size: 12pt;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        
+        <img src="path/ke/UNINDRA_PGRI.png" alt="Logo UNINDRA" class="logo-left">
+        
+        <div class="title-block">
+            <div class="judul-utama">UNIVERSITAS INDRAPRASTA PGRI (UNINDRA)</div>
+            <div class="alamat-marquee">
+                <marquee behavior="alternate" direction="left" scrollamount="4">
+                    Jl. Nangka No.58 Tanjung Barat - Jaksel
+                </marquee>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="pemisah">
+
+    <form action="" method="POST"> 
+
+        <table class="data-table">
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="nama" class="input-field" placeholder="Masukkan Nama Anda">
+                </td>
+            </tr>
+            <tr>
+                <td>NPM</td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="npm" class="input-field" placeholder="Masukkan NPM Anda">
+                </td>
+            </tr>
+        </table>
+
+        <div class="content-area">
+            
+            <h3>FTIK :</h3>
+            <ol class="ftik-list" style="list-style-type: none;">
+                <li>A. Informatika</li>
+                <li>B. Teknik Arsitektur</li>
+                <li>C. Teknik Industri</li>
+            </ol>
+            
+            <div class="button-container">
+                <button type="submit" class="simpan-button">SIMPAN</button>
+            </div>
+
+            <h3>MIPA:</h3>
+            <ol class="mipa-list">
+                <li>Matematika</li>
+                <li>Fisika</li>
+                <li>Biologi</li>
+            </ol>
+        </div>
+
+    </form>
+    </body>
+</html>
